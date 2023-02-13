@@ -1,0 +1,114 @@
+
+.block{
+    padding: 20px;
+    background-color: #263137;
+    border-radius: 5px;
+}
+.block_title{
+    margin-bottom: 25px;
+}
+.theme_block{
+    margin: 8px;
+    padding-bottom: 10px;
+    font-size: 15px;
+    border-bottom:1px solid rgba(240,240,240,0.1) ;
+}
+.title_custom{
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+.description{
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    word-break: break-word;
+    color: white;
+}
+.block_comments{
+    display: flex;
+    flex-direction: column;
+    align-self: start;
+}
+.username_block{
+    display: flex;
+    margin: 15px 0;
+}
+.username{
+    padding: 5px 15px;
+    text-align: left;
+    background-color: #191d1f9a;
+    color: aliceblue;
+}
+.username_text{
+    margin: 15px;
+    color: rgb(255, 244, 244);
+    background: rgba(150, 150, 150, 0.477);
+    padding: 30px;
+}
+
+.form_create{
+    margin-top: 25px ;
+    display: flex;
+    justify-content: center;
+    /* min-width: 500px; */
+}
+form{
+    display: flex;
+    flex-direction: column;
+    min-width: 500px;
+    background: #222e34;
+    margin: 15px 0;
+    padding: 25px;
+    border-radius: 15px;
+}
+label{
+    font-size: 18px;
+    color: white;
+    margin-right: 25px;
+    margin-bottom: 15px;
+}
+.form_lable{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    flex-direction: column;
+}
+textarea{
+    padding: 5px 10px;
+    box-sizing: border-box;
+    border: 1px solid rgba(255,255,255,.4);
+    border-radius: 4px;   
+    font-weight: 300;
+    width: 100%;
+}
+input{
+    padding: 5px 10px;
+    box-sizing: border-box;
+    border: 1px solid rgba(255,255,255,.4);
+    border-radius: 4px;
+    font-weight: 300;   
+}
+.btn{
+    width: 138px;
+    height: 34px;
+    align-self:center;
+    border: 1px solid #253737;
+    background: #416b68;
+    border-radius: 4px;
+    transition: .5s;
+    text-shadow: #333333 0 1px 0;
+    color: #e1e1e1;
+    font-size: 15px;
+    margin-top: 15px;
+}
+.block_comments{
+    border-bottom:1px solid rgba(150, 150, 150, 0.477) ;
+}
+h1{
+    color: white;
+
+}
+.answer{
+     border-bottom:2px solid white ;
+     padding-bottom: 15px;
+}

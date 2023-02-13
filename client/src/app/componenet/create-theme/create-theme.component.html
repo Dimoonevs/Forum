@@ -1,0 +1,36 @@
+<div class="form_create">
+        <form 
+        [formGroup]="formTheme"
+         (ngSubmit)="onSubmit()" >
+
+         <div class="form_lable">
+            <label for="name">Названия темы</label>
+            <input name="name" 
+            id="name"
+            rows="4"
+            type="text" 
+            placeholder="Введите название темы" 
+            formControlName="name"/>
+        </div>
+        <div *ngIf="_name.invalid && (_name.dirty || _name.touched)" class="alert alert-danger">
+            <div *ngIf="_name.errors?.required" class="red_text">Обязательное поле</div>
+            <div *ngIf="_name.errors?.maxlength" class="red_text">привышен лимит символов</div>
+        </div>
+
+            <div class="form_lable">
+                <label for="text">Описания темы</label>
+                <textarea name="text" 
+                id="text" cols="30" 
+                rows="4" 
+                placeholder="Введите описание темы" 
+                formControlName="text"></textarea>
+            </div>
+            <div *ngIf="_text.invalid && (_text.dirty || _text.touched)" class="alert alert-danger">
+                <div *ngIf="_text.errors?.required" class="red_text">Обязательное поле</div>
+                <div *ngIf="_text.errors?.maxlength" class="red_text">Привышен лимит символов</div>
+            </div>
+
+            <button type="submit" class="btn" [disabled]="formTheme.invalid || formTheme.disabled">Создать</button>
+        </form>
+</div>
+

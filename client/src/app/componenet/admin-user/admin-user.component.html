@@ -1,0 +1,19 @@
+<table class="table">
+	<thead>
+		<tr>
+			<th>Username</th>
+			<th>Role</th>
+            <th>Active</th>
+            <th></th>
+		</tr>
+	</thead>
+	<tbody *ngFor="let user of response.data">
+		<tr *ngIf="!isAdmin(user.role)">
+			<td>{{user.username}}</td>
+			<td>{{user.role}}</td>
+            <td>{{user.isActive}}</td>
+			<td class="btn_contener" *ngIf="user.isActive"><button class="btn" (click)="info(user.id)">Blocked</button></td>
+			<td class="btn_contener" *ngIf="!user.isActive"><button class="btn" (click)="info(user.id)">Unblocked</button></td>
+		</tr>
+	</tbody>
+</table>

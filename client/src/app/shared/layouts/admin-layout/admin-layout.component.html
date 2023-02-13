@@ -1,0 +1,34 @@
+<div class="container">
+
+    <!-- Заголовок -->
+    <header class="dashboard-header">
+        <h1 class="dashboard-header__logo">Админка</h1>
+        <a href="overview" class="Home"><h1 class="dashboard-header__logo link">Home</h1></a>
+    </header>
+
+    <!-- Левое меню -->
+    <nav class="sidebar-menu">
+        <ul class="sidebar-menu__items">
+            <li class="sidebar-menu__item">
+                <a href="" routerLink="users" class="sidebar-menu__item-title">
+                    <span>Пользователи</span>
+                    <i class="fas fa-caret-down"></i>
+                </a>
+            </li>
+            <li class="sidebar-menu__item">
+                <a  href="" routerLink="message" class="sidebar-menu__item-title">
+                    <span>Сообщения</span>
+                    <i class="fas fa-caret-down"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Главный контент -->
+    <main class="main-content">
+        <router-outlet></router-outlet>
+    </main>
+
+
+    
+</div>

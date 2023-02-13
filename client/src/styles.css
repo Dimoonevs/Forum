@@ -1,0 +1,125 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+  *, *:before, *:after{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  :focus, :active{outline: none;}
+  a:focus, a:active{outline: none;}
+  
+  nav,footer,header,aside{display: block;}
+  
+  html, body{
+    height: 100%;
+    width: 100%;
+    font-style: 100%;
+    line-height: 1;
+    font-style: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
+  
+  input, button, textarea{font-family: inherit;}
+  
+  input::-ms-clear{display:none;}
+  button{cursor: pointer;}
+  button::-moz-focus-inner{padding: 0;border: 0;}
+  a, a:visited{text-decoration: none;}
+  a:hover{text-decoration: none;}
+  ul li{list-style-type: none;}
+  img{vertical-align: top;}
+  
+  h1,h2, h3, h4, h5, h6{font-style: inherit; font-weight: 400;}
+
+.wrapper{
+    padding: 0 15px;
+    max-width: 1281px;
+    margin: 0 auto;
+}
+
+.logo{
+    color: rgb(248, 72, 72);
+    font-size: 30px;
+
+}
+.link{
+    font-size: 18px;
+    color: white;
+    transition: .5s;
+}
+.link:hover, .link:active{
+  color: rgba(0, 255, 255, 0.486);
+}
+
+header{
+    padding: 15px;
+    border-bottom:1px solid rgba(255, 255, 255, 0.674) ;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+body{
+    background-color: #151d20;
+}
+button:disabled{
+  opacity: 10%;
+  cursor:default;
+  background: #416b68;
+  
+}
+.toast{
+  position:absolute;
+  right: 10px;
+  top: 150px;
+  background-color: rgba(0, 0, 0, 0.762);
+  padding: 25px 25px;
+  margin-top: 85px;
+  border-radius: 20px;
+  color: white;
+}
+.title{
+  text-align: center;
+  font-size: 25px;
+  margin: 15px;
+  color: #416b68;
+}
+
+input.ng-invalid.ng-touched {
+  border: 2px solid red;
+}
+textarea.ng-invalid.ng-touched {
+  border: 2px solid red;
+}
+
+.btn:not([disabled]):hover{
+  background-color: #416b6866;
+}
+.red_text{
+  color: red;
+}
+footer{
+  padding: 50px 0;
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.674);
+  margin-top: 50px;
+
+}
+footer span{
+  color: white;
+  margin-right: 25px;
+}
+footer a{
+  cursor: pointer;
+}
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

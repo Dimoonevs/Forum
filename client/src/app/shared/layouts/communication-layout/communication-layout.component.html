@@ -1,0 +1,18 @@
+<header>
+    <div class="header_nav">
+        <div class="header_nav_logo"><a href="" class="logo">Forum</a></div>
+        <div class="header_nav_nav">
+            <ul>
+                <li routerLinkActive="active"><a routerLink="overview" class="link">Главная</a></li>
+                <!-- <li routerLinkActive="active"><a routerLink="create_theme" class="link">Создать тему</a></li> -->
+                <li routerLinkActive="active" *ngIf="admin"><a routerLink="admin" class="link">Админка</a></li>
+            </ul>
+            
+                
+        </div>
+    </div>
+    <li class="logout"><a href="#" class="link" (click)="logout($event)">Выйти</a></li>
+</header>
+<div class="wrapper">
+    <router-outlet></router-outlet>
+</div>

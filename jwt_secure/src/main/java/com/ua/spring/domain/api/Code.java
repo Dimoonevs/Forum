@@ -1,0 +1,13 @@
+package com.ua.spring.domain.api;
+
+public enum Code {
+    NICKNAME_BUSY,
+    USER_NOT_FOUND,
+    AUTHORIZATION_ERROR,
+    TOKEN_VALIDATION_ERROR,
+    TOKEN_EXPIRED,
+    PASSWORD_ERROR,
+    USER_BLOCKED,
+    MESSAGE_IS_PROCESSED,
+    EMAIL_EXIST
+}

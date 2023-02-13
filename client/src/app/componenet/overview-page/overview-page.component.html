@@ -1,0 +1,15 @@
+
+<div class="block">
+    <div class="block_title"><input (keyup)="onKey($event)" placeholder="Поиск"><div class="title">Theme</div><button class="button_theme"  (click)="createTheme()">Добавить тему</button></div>
+    
+    <div class="block_theme">
+        <ul>
+            <li *ngFor="let resp of  theme" class="theme_block"><a (click)="themeInfo(resp.id)">{{resp.name}}</a></li>
+        </ul>
+    </div>
+</div>
+
+
+
+
+

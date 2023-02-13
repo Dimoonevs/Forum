@@ -1,0 +1,43 @@
+<div class="block">
+    <div class="block_title">
+        <div class="title title_custom">{{thmeInfoResp.data.theme.name}}</div>
+        <div class="description"><p>{{thmeInfoResp.data.theme.text}}</p></div>
+    </div>
+    <div class="answer">
+        <h1>Коментарии:</h1>
+    </div>
+    <div class="" *ngFor="let comment of thmeInfoResp.data.commentResp">
+        <div class="block_comments"*ngIf="comment.isActive">
+            <div class="comments">
+                <div class="username_block" ><p class="username">{{comment.username}}</p></div>
+                <div class="username_text">
+                    {{comment.textComment}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="form_create">
+    <form [formGroup]="formComment"
+    (ngSubmit)="createComments()">
+        <div class="form_lable">
+            <label for="name">Напишите коментарий</label>
+            <textarea name="name" 
+            id="name"
+            rows="4"
+            cols="30" 
+            rows="4"
+            placeholder="Напишите коментарий" 
+            formControlName="name"></textarea>
+        </div>
+        <div *ngIf="_name.invalid && (_name.dirty || _name.touched)" class="alert alert-danger">
+            <div *ngIf="_name.errors?.required" class="red_text">Обязательное поле</div>
+        </div>
+        
+
+        <button type="submit" class="btn" [disabled]="formComment.invalid || formComment.disabled">Отправить</button>
+    </form>
+</div>
+

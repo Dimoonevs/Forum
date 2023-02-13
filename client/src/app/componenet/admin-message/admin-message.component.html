@@ -1,0 +1,22 @@
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Email</th>
+			<th>Message</th>
+            <th>Is processed</th>
+		</tr>
+	</thead>
+	<tbody *ngFor="let message of response.data">
+		<tr  [ngClass] = "{'non_active': message.isProcessed}">
+			<td><button class="new_status" *ngIf="isNew(message.statusMessage, !message.isProcessed)">new</button>{{message.email}}</td>
+			<td>{{message.message}}</td>
+            <td *ngIf="!message.isProcessed; else yes">Не обработано сообщение <button class="btn" (click)="processedMessage(message.id)">DONE</button></td>
+            <ng-template #yes>
+                <td>
+                    Обработано сообщение
+                </td>
+            </ng-template>
+		</tr>
+	</tbody>
+</table>
