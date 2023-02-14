@@ -18,12 +18,6 @@ import org.springframework.web.bind.annotation.*;
 public class CommunicationController {
     private final CommentsService communicationService;
     private final SearchService searchService;
-    @GetMapping
-    public ResponseEntity<Response> hello(){
-        log.info("START point: {}", "Ok");
-        return ResponseEntity.ok(SuccessResponse.builder().data("Hello Mathafaka!!!").build());
-    }
-
     @PostMapping("/add_comments")
     public ResponseEntity<Response> addComments(@RequestBody CommentReq commentReq, @RequestHeader String Authorization, @RequestHeader Long id){
         log.info("START point, add comments {}", commentReq);
