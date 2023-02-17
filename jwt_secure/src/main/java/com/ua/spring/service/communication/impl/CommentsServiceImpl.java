@@ -46,20 +46,6 @@ public class CommentsServiceImpl implements CommentsService {
         return new ResponseEntity<>(SuccessResponse.builder().data("Success create").build(), HttpStatus.OK);
     }
 
-    @Override
-    public ResponseEntity<Response> getComments() {
-        List<Comments> comments = commentsRepo.findAll();
-        List<CommentResp> commentResp = new ArrayList<>();
-
-        for (Comments comments1:
-             comments) {
-            commentResp.add(CommentResp.builder()
-                    .textComment(comments1.getText())
-                    .role(comments1.getUser().getRole())
-                    .username(comments1.getUser().getUsername()).build());
-        }
-
-        return new ResponseEntity<>(SuccessResponse.builder().data(commentResp).build(), HttpStatus.OK);
-    }
+ 
 
 }

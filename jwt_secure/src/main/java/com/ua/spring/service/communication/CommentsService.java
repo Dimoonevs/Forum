@@ -7,7 +7,6 @@ import org.springframework.http.ResponseEntity;
 public interface CommentsService {
 
     ResponseEntity<Response> addComments(CommentReq commentReq, String jwt, Long id);
-    ResponseEntity<Response> getComments();
 
 
 }

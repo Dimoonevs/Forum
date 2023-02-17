@@ -41,21 +41,23 @@ public class MessageServiceImpl implements MessageService {
     @Override
     public ResponseEntity<Response> getAllMessage() {
         List<Message> messages = messageRepo.findAll().stream().toList();
-        List<MessageEntityReq> messageReqs = new ArrayList<>();
-        for (Message message:
-             messages) {
-            if(message.getLocalDateTime().before(new Date(System.currentTimeMillis()))) {
-                message.setStatusMessage(StatusMessage.OLD);
-            }
-            messageReqs.add(MessageEntityReq.builder()
-                    .id(message.getId())
-                    .message(message.getMessage())
-                    .email(message.getEmail())
-                    .isProcessed(message.getIsProcessed())
-                    .statusMessage(message.getStatusMessage()).build());
-        }
-        Collections.reverse(messageReqs);
-        return new ResponseEntity<>(SuccessResponse.builder().data(messageReqs).build(), HttpStatus.OK);
+        List<MessageEntityReq> messageEntityReqs = new ArrayList<>();
+        
+        
+        messages.forEach(message -> {
+        	if(message.getLocalDateTime().before(new Date(System.currentTimeMillis()))) {
+        		message.setStatusMessage(StatusMessage.OLD);
+    		}
+        	messageEntityReqs.add(MessageEntityReq.builder()
+        			.id(message.getId())
+        			.message(message.getMessage())
+        			.email(message.getEmail())
+        			.isProcessed(message.getIsProcessed())
+        			.statusMessage(message.getStatusMessage()).build());
+    	});
+        
+        Collections.reverse(messageEntityReqs);
+        return new ResponseEntity<>(SuccessResponse.builder().data(messageEntityReqs).build(), HttpStatus.OK);
     }
 
     @Override

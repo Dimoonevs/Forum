@@ -24,11 +24,7 @@ public class CommunicationController {
         return communicationService.addComments(commentReq, Authorization, id);
     }
 
-    @GetMapping("/get_comments")
-    public ResponseEntity<Response> getComments(){
-        log.info("START point");
-        return communicationService.getComments();
-    }
+ 
     @GetMapping("/get_user_comments")
     public ResponseEntity<Response> getUserComments(@RequestHeader String Authorization){
         log.info("START point");

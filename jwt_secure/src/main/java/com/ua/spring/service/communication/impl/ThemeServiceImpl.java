@@ -40,15 +40,12 @@ public class ThemeServiceImpl implements ThemeService {
         Theme theme = themeRepo.findById(id).get();
         List<Comments> comments = commentsRepo.findByThemes(theme);
         List<CommentResp> commentResp = new ArrayList<>();
-
-        for (Comments comments1:
-                comments) {
-            commentResp.add(CommentResp.builder()
-                    .textComment(comments1.getText())
-                    .role(comments1.getUser().getRole())
-                    .username(comments1.getUser().getUsername())
-                    .isActive(comments1.getUser().getIsActive()).build());
-        }
+        
+        comments.forEach(comment -> commentResp.add(CommentResp.builder()
+        		.textComment(comment.getText())
+        		.role(comment.getUser().getRole())
+        		.username(comment.getUser().getUsername())
+        		.isActive(comment.getUser().getIsActive()).build()));
 
         return new ResponseEntity<>(SuccessResponse.builder().data(ThemeResp.builder().commentResp(commentResp.stream().toList()).theme(theme).build()).build(), HttpStatus.OK);
     }
